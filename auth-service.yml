@@ -22,7 +22,6 @@ management:
       exposure:
         include: health,info
 
-
-    jwt:
-      secret: VGhpc0lzQVN1cGVyU2VjdXJlSldUU2VjcmV0S2V5Rm9yUXVpekh1YkF1dGhTZXJ2aWNlMTIzNDU2Nzg5
-      expiration: 86400000
+jwt:
+  secret: VGhpc0lzQVN1cGVyU2VjdXJlSldUU2VjcmV0S2V5Rm9yUXVpekh1YkF1dGhTZXJ2aWNlMTIzNDU2Nzg5
+  expiration: 86400000
