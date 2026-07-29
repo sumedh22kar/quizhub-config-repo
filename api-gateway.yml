@@ -5,20 +5,28 @@ spring:
         webmvc:
           routes:
             - id: auth-service
-              uri: http://localhost:9001
+              uri: http://${AUTH_SERVICE_HOST:localhost}:${AUTH_SERVICE_PORT:9001}
               predicates:
                 - Path=/api/v1/auth/**
             - id: quiz-service
-              uri: http://localhost:9002
+              uri: http://${QUIZ_SERVICE_HOST:localhost}:${QUIZ_SERVICE_PORT:9002}
               predicates:
                 - Path=/api/v1/quizzes/**
             - id: question-service
-              uri: http://localhost:9003
+              uri: http://${QUESTION_SERVICE_HOST:localhost}:${QUESTION_SERVICE_PORT:9003}
               predicates:
                 - Path=/api/v1/questions/**
+            - id: submission-service
+              uri: http://${SUBMISSION_SERVICE_HOST:localhost}:${SUBMISSION_SERVICE_PORT:9004}
+              predicates:
+                - Path=/api/v1/submissions/**
+            - id: result-service
+              uri: http://${RESULT_SERVICE_HOST:localhost}:${RESULT_SERVICE_PORT:9005}
+              predicates:
+                - Path=/api/v1/results/**
 
 jwt:
   secret: VGhpc0lzQVN1cGVyU2VjdXJlSldUU2VjcmV0S2V5Rm9yUXVpekh1YkF1dGhTZXJ2aWNlMTIzNDU2Nzg5
 
 server:
-  port: 9000
+  port: ${SERVER_PORT:9000}
